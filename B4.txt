@@ -1,0 +1,41 @@
+/* command to install 
+ (if java not installed ) sudo apt-get install default jdk
+ sudo apt-get install scala (for java versions 1.8 and above)
+*/
+
+object PalindromeChecker
+{
+   def main(args: Array[String]): Unit = {
+  
+        printf("Enter a string: ")
+        val str: String = scala.io.StdIn.readLine().toLowerCase()
+    
+    val isPalindrome: Boolean = checkPalindromeIfElse(str)
+    if (isPalindrome) {
+      println(s"The string $str is a palindrome.")
+    } else {
+      println(s"The string $str is not a palindrome.")
+    }
+
+  }
+
+  def checkPalindromeIfElse(str: String): Boolean = {
+    val reversed = str.reverse
+    if (str == reversed) {
+      true
+    } else {
+      false
+    }
+  }
+}
+/* OUTPUT 
+admin1@Your:~$ scalac B4.scala
+admin1@Your:~$ scala PalindromeChecker
+Enter a string: Nitin
+The string nitin is a palindrome.
+admin1@Your:~$ scala PalindromeChecker
+Enter a string: Manisha
+The string manisha is not a palindrome.
+admin1@Your:~$ 
+
+*/
